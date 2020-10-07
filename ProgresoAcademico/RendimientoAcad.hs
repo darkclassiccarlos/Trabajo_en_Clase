@@ -20,6 +20,17 @@ promedio x = division (sumnotas x)  (length' x)
 --Calcular promedio rendimiento
 rendimiento :: [Float] -> String 
 rendimiento [] = "no hay valores"
-rendimiento v = if promedio v <= 3 then "malo"
+rendimiento v = if promedio v <= 3 then "malo" 
                 else if promedio v <=4 then "bueno"
-                else "Muy bueno"                 
+                else "Muy bueno"                
+
+--Multiplicacion
+mult ::Float -> Float -> Float
+mult a b = a * b
+
+--Indice de rendimiento IRA
+-- a notas b creditos
+ira :: [Float] -> [Float] -> Float
+ira [] [] = 0
+ira a b = division (mult (sumnotas a ) (sumnotas b)) (sumnotas b )
+
